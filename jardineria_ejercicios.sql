@@ -1,7 +1,4 @@
 /* 
-4. Devuelve el nombre del puesto, nombre, apellidos y email del jefe de la empresa.
-5. Devuelve un listado con el nombre, apellidos y puesto de aquellos empleados que no sean representantes de ventas.
-6. Devuelve un listado con el nombre de los todos los clientes españoles.
 7. Devuelve un listado con los distintos estados por los que puede pasar un pedido. 2.
 42
 8. Devuelve un listado con el código de cliente de aquellos clientes que realizaron algún pago en 2008. Tenga en cuenta que deberá eliminar aquellos códigos de cliente que aparezcan repetidos. Resuelva la consulta: o Utilizando la función YEAR de MySQL. o Utilizando la función DATE_FORMAT de MySQL. o Sin utilizar ninguna de las funciones anteriores.
@@ -27,7 +24,21 @@ Tenga en cuenta que no deben aparecer formas de pago repetidas.
  WHERE CODIGO_OFICINA LIKE('%ES');
  */
  -- 3. Devuelve un listado con el nombre, apellidos y email de los empleados cuyo jefe tiene un código de jefe igual a 7.--
- /* Ejercicio 3
- 
- 
+ /* Ejercicio 3 
+ SELECT NOMBRE, concat(APELLIDO1, ' ', APELLIDO2)  Apellido,  EMAIL FROM EMPLEADO
+ WHERE CODIGO_JEFE = 7;
+ */
+ -- 4. Devuelve el nombre del puesto, nombre, apellidos y email del jefe de la empresa. --
+ /* Ejercicio 4
+ SELECT  puesto 'Nombre del puesto', nombre, CONCAT(APELLIDO1, ' ', APELLIDO2) Apellidos, email FROM empleado
+ WHERE puesto LIKE ('Director general');
+ */
+ -- 5. Devuelve un listado con el nombre, apellidos y puesto de aquellos empleados que no sean representantes de ventas.--
+ /* Ejercicio 5
+ SELECT   nombre, CONCAT(APELLIDO1, ' ', APELLIDO2) Apellidos, puesto 'Nombre del puesto' FROM empleado
+ WHERE puesto NOT LIKE ('Representante de ventas');
+ */
+ -- 6. Devuelve un listado con el nombre de los todos los clientes españoles.--
+ /* Ejercicio 6
+ SELECT nombre_cliente NOMBRE FROM cliente
  
