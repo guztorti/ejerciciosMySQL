@@ -42,3 +42,4 @@ Tenga en cuenta que no deben aparecer formas de pago repetidas.
  /* Ejercicio 6
  SELECT nombre_cliente NOMBRE FROM cliente
  
+*/
